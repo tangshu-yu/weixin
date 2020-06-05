@@ -1,0 +1,29 @@
+<!--pages/add/add.wxml-->
+
+<loading hidden="{{loadingHide}}">
+  {{loadingText}}
+</loading>
+<view class="addMain">
+  <form bindsubmit="submit">
+    <view class="xuanBtn">
+      <button class="{{isChecked?'is_checked':'diuBtn'}}" bindtap="diushi">丢了东西</button>
+      <view class="xuanLine"></view>
+      <button class="{{isChecksd?'is_checksd':'jianBtn'}}" bindtap="jiandao">捡到东西</button>
+    </view>
+    <view class="mbInput">
+
+      <!--物品描述+图片上传-->
+      <view class="miaoshu">
+        <textarea placeholder="物品的描述(不超过100字）" class="section" bindinput='textInput' maxlength="100" name="text" value='{{text}}' />
+        <view bindtap="uploadImgHandle">
+          <image src="../../images/LostPageIssue/upic.png" class="uploadPic" mode="widthFix"></image>
+          <image wx:for="{{imglist}}" class="uploadPics" mode="aspectFill" src="{{item}}" wx:key="" catchtap='deleteImg'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="mbBtn">
+      <button  type="primary" size="default"  formType="submit" disabled="{{text == ''}}" loading="{{loading}}">提交发布</button>
+    </view>
+  </form>
+</view>

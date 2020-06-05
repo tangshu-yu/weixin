@@ -1,0 +1,32 @@
+<!--pages/Post/Post.wxml-->
+<!--post.wxml-->
+<!-- 发布书本 -->
+<view class='box'>
+  <view class='wrapper'>
+    <view>校园百货</view>
+  </view>
+</view>
+
+<!-- 校园百货 -->
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="picker">
+    选择类别：{{array[index]}}
+  </view>
+</picker>
+
+
+<view class="mbInput">
+
+  <!--物品描述+图片上传-->
+  <view class="miaoshu">
+    <textarea placeholder="物品的描述(不超过100字）" class="section" bindinput='bindTextAreaBlur' maxlength="100" name="content" value='{{content}}' />
+    <view>
+      <image  bindtap="bindThingImageInput" src="../../images/LostPageIssue/upic.png" class="uploadPic" mode="widthFix"></image>
+        <image wx:for="{{thingImage}}" class="uploadPics" mode="aspectFill" src="{{item}}" wx:key="" catchtap='deleteImg'></image>
+    </view>
+  </view>
+</view>
+
+<view class="mbBtn">
+  <button  type="primary" size="default"  bindtap="bindSubmit" disabled="{{content == ''}}" loading="{{buttonLoadingJob}}" >提交发布</button>
+</view>

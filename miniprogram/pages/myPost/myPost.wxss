@@ -1,0 +1,214 @@
+/* post.wxss */
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 80rpx;
+}
+
+.tab-content {
+  width: 240rpx;
+  height: 76rpx;
+  text-align: center;
+  line-height: 76rpx;
+}
+
+.select {
+  border-bottom-width: 2rpx;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(77, 143, 204);
+  color: rgb(77, 164, 204);
+}
+
+.noSelect {
+  color: #666;
+}
+
+.tip {
+  width: 100%;
+  color: red;
+  font-size: 28rpx;
+  background-color: #e6e6e6;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.title_right {
+  display: flex;
+  flex-direction: column;
+}
+
+.title_image {
+  margin: auto 0rpx;
+  border: 1rpx solid #d3d3d3;
+}
+
+.title_image image {
+  width: 185rpx;
+  height: 220rpx;
+}
+
+.weui-cell_input {
+  margin-top: 4rpx;
+}
+
+.weui-label {
+  width: 170rpx;
+}
+
+.describe {
+  border: 1px solid #d3d3d3;
+  height: 340rpx;
+  line-height: 28rpx;
+  width: 535rpx;
+  margin-bottom: 5rpx;
+}
+
+.describe_thing {
+  border: 1px solid #d3d3d3;
+  height: 320rpx;
+  line-height: 28rpx;
+  width: 535rpx;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
+}
+
+.outside_border {
+  width: 98%;
+  margin: 0rpx auto;
+  margin-bottom: 600rpx;
+}
+
+/* pages/userMsg/mySend/mySend.wxss */
+
+/* pages/lostandfound/lostandfound.wxss */
+
+.tabs {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.page {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+.userMsg-name{
+  font-size: smaller;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.userMsg-date{
+  font-size:small;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.head {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 35px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.author {
+  width: 100%;
+  height: 100rpx;
+  font-size: small;
+  flex-direction: row;
+}
+
+.content {
+  margin-left: 20rpx;
+  width: 90%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 20;
+  font-size: small;
+  margin-top: 20rpx
+}
+
+.contnet-img {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  width: 220rpx;
+  height: 220rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.date-content {
+  font-size: xx-small;
+}
+
+.comment-image {
+  position: absolute;
+  right: 70rpx;
+  margin-bottom: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.comment-count {
+  position: absolute;
+  right: 50rpx;
+  margin-bottom: 10rpx;
+  font-size: small;
+}
+
+.comment-countUnread {
+  position: absolute;
+  right: 200rpx;
+  margin-bottom: 10rpx;
+  font-size: small;
+}
+
+/**列表图片*/
+
+.options-image {
+  position: absolute;
+  right: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.options {
+  margin-left: 550rpx;
+}
+
+.date-comment {
+  display: flex;
+  flex-direction: row;
+}
+
+/*分割线样式*/
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 5rpx;
+  margin-top: 40rpx;
+}
+
+.save-bottom {
+  width: 100%;
+  height: 110rpx;
+}

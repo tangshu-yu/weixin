@@ -1,0 +1,158 @@
+/* 分类的类 */
+
+.nav-header {
+  font-size: 28.12rpx;
+  display: -webkit-box;
+  text-align: center;
+  background: #fff;
+  padding: 0 16.41rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.nav-cell {
+  -webkit-box-flex: 1;
+}
+
+.nav-cell.active {
+  color: #2dc3ff;
+  border-bottom: #2dc3ff 4.69rpx solid;
+}
+
+.fenlei {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 180rpx;
+  margin-top: 10rpx;
+  background-color: white;
+  border-bottom: 2rpx rgba(248, 248, 248, 0.959) solid;
+}
+
+.fenlei .navi {
+  flex-grow: 1;
+  width: 50rpx; /*此处无效，但是必须存在*/
+}
+
+.leibie {
+  margin-top: 18rpx;
+  width: 100%;
+  height: 70%;
+  text-align: center;
+}
+
+.leibie image {
+  margin: auto 0rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-top: 10rpx;
+}
+
+.leibie view {
+  font-size: 30rpx;
+  color: #666;
+  margin-top: -14rpx;
+}
+
+.navigator-hover {
+  color: blue;
+}
+
+/* pages/lostandfound/lostandfound.wxss */
+
+.tabs {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.page {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.author {
+  width: 100%;
+  height: 100rpx;
+  font-size: small;
+}
+
+.content {
+  margin-left: 10rpx;
+  width: 90%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 20;
+  font-size: small;
+  margin-top: 20rpx;
+}
+
+.contnet-img {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  width: 220rpx;
+  height: 220rpx;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.date-content {
+  font-size: xx-small;
+}
+
+.comment-image {
+  position: absolute;
+  right: 70rpx;
+  margin-bottom: 40rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.comment-count {
+  position: absolute;
+  right: 50rpx;
+  margin-bottom: 10rpx;
+  font-size: small;
+}
+
+.date-comment {
+  display: flex;
+  flex-direction: row;
+}
+
+/*分割线样式*/
+
+.divLine {
+  background: #e0e3da;
+  width: 100%;
+  height: 5rpx;
+  margin-top: 40rpx;
+}
+
+.head {
+   width: 70rpx;
+  height: 70rpx;
+  border-radius: 35px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.save-bottom {
+  background: rgb(233, 240, 238);
+  color: rgb(47, 90, 207);
+  line-height: 50rpx;
+  flex: 0 0 50rpx; /* 不放大不缩小固定100rpx */
+}

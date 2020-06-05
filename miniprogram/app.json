@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/logs/logs",
+   "pages/TradeInIdleIgoods/TradeInIdleIgoods",
+    "pages/LostPropertyInquiry/LostPropertyInquiry",
+    "pages/TradeInIdleIgoods/comment/comment",
+    "pages/LostPropertyInquiry/comment/comment",
+    "pages/my/my",
+    "pages/LostPropertyInquiryIssue/LostPropertyInquiryIssue",
+    "pages/Search/Search",
+    "pages/Post/Post",
+    "pages/myPost/myPost",
+     "pages/about/about"
+
+      
+  ],
+  
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "重庆三峡学院闲置物品交易",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "images/tabBar/UnSelectGoods.png",
+        "selectedIconPath": "images/tabBar/SlectGoods.png",
+        "pagePath": "pages/TradeInIdleIgoods/TradeInIdleIgoods",
+        "text": "闲置物品交易"
+      },
+      {
+        "iconPath": "images/tabBar/UnSelectLost.png",
+        "selectedIconPath": "images/tabBar/SeletLost.png",
+        "pagePath": "pages/LostPropertyInquiry/LostPropertyInquiry",
+        "text": "失物招领"
+      },
+      {
+        "iconPath": "images/tabBar/UnSelectMy.png",
+        "selectedIconPath": "images/tabBar/SelectMy.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+
+}

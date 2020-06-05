@@ -1,0 +1,84 @@
+<!--pages/myPost/myPost.wxml-->
+<!-- 发布书本 -->
+<view class='box'>
+  <view class='wrapper'>
+    <view class="tab-content {{postThing ? 'select' : 'noSelect'}} " bindtap='choosePostThing'>物品发布</view>
+    <view class="tab-content {{postLost ? 'select' : 'noSelect'}}" bindtap='choosePostLost'>捡到或丢失</view>
+  </view>
+</view>
+
+
+
+<view wx:if="{{postThing}}" class='page'>
+  <!--循环二手物品内容 -->
+  <block wx:for="{{queryResult}}" wx:key="item" wx:for-index="index">
+    <view class='body'>
+      <view class='author'>
+        <!-- <w-avatar src="{{item.avatar}}">W</w-avatar>  头像 -->
+        <image size="large" src='{{item.avatarUrl}}' class='head'> </image>
+        <!--头像 -->
+        <text>{{item.nickName}}</text>
+              <!-- <text class='userMsg-name'>{{item.userName}}单号i双待手机的啊是多久啊</text> -->
+        <!-- <text class='userMsg-date'></text> -->
+          <image src='/images/mysent/wx_app_delete.jpg' class='options-image' catchtap='delete' data-post-id="{{index}}"></image>
+        <!--用户名 -->
+      </view>
+      <!-- 文本内容-->
+      <text class='content'>{{item.content}}</text>
+      <!--图片内容 -->
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' class='image' mode='aspectFill' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.date}}</text>
+        <!--评论 -->
+        <view>
+               <text class='comment-countUnread'>未读消息：{{item.commentSize-item.readcount}}</text>
+          <image src='/images/mysent/wx_app_comment.jpg' class='comment-image' catchtap='onTapToCommentGoods' data-post-id="{{index}}"></image>
+          <text class='comment-count'>{{item.commentSize}}</text>
+        </view>
+      </view>
+      <!-- 分割线-->
+      <view class='divLine' id="3"></view>
+    </view>
+  </block>
+</view>
+
+
+
+
+
+<view wx:if="{{postLost}}" class='page'>
+  <!--循环遍历失物招领内容 -->
+  <block wx:for="{{quertLost}}" wx:key="item" wx:for-index="index">
+    <view class='body'>
+      <view class='author'>
+        <!-- <w-avatar src="{{item.avatar}}">W</w-avatar>  头像 -->
+        <image src='{{item.avatarUrl}}' class='head'> </image>
+        <!--头像 -->
+        <text>{{item.nickName}}</text>
+        <image src='/images/mysent/wx_app_delete.jpg' class='options-image' catchtap='delete' data-post-id="{{index}}"></image>
+        <!--用户名 -->
+      </view>
+      <!-- 文本内容-->
+      <text class='content'>{{item.content}}</text>
+      <!--图片内容 -->
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' class='image' mode='aspectFill' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.labels}}{{item.date}}</text>
+        <!--评论 -->
+        <view>
+        <text class='comment-countUnread'>未读消息：{{item.commentSize-item.readcount}}</text>
+          <image src='/images/mysent/wx_app_comment.jpg' class='comment-image' catchtap='onTapToCommentLost' data-post-id="{{index}}"></image>
+          <text class='comment-count'>{{item.commentSize}}</text>
+        </view>
+      </view>
+      <!-- 分割线-->
+      <view class='divLine' id="3"></view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,82 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  <view class="search">
+    <view class="search_input">
+      <input class="search_input2" placeholder='搜索商品' value='{{searchVal}}' bindconfirm="search" bindinput="input"></input>
+      <image class="search_clear" wx:if="{{ searchVal != '' }}" catchtap="clear" src="../../images/search/clear.png"></image>
+    </view>
+    <image class="search_image" src="../../images/search/search.png" catchtap="search"></image>
+  </view>
+</view>
+
+
+<view wx:if="{{flag==true}}">
+  <block wx:for="{{queryResult}}" wx:key="item" wx:for-index="index">
+    <view class='body'>
+      <view class='author'>
+        <!--头像 -->
+        <image src="{{item.avatarUrl}}" class='head'></image>
+        <!--用户名 -->
+
+        <text>{{item.nickName}}</text>
+      </view>
+      <!-- 文本内容-->
+      <!-- <view class="textContent"> -->
+      <text class='content'>{{item.content}}</text>
+      <!-- </view> -->
+
+
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' mode='aspectFill' class='image' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.date}}</text>
+
+        <image src='/images/wx_app_comment.jpg' class='comment-image' catchtap='onTapToCommentGoods' data-post-id="{{item._id}}"></image>
+        <text class='comment-count'>{{item.commentSize}}</text>
+
+      </view>
+    </view>
+
+
+    <!-- 分割线-->
+    <view class='divLine'></view>
+  </block>
+</view>
+
+
+<view wx:if="{{flag==false}}">
+<view class='page'>
+  <!--循环遍历失物招领内容 -->
+  <block wx:for="{{queryResult}}" wx:key="item" wx:for-index="index">
+    <view class='body'>
+      <view class='author'>
+        <!-- <w-avatar src="{{item.avatar}}">W</w-avatar>  头像 -->
+        <image src='{{item.avatarUrl}}' class='head'> </image>
+        <!--头像 -->
+        <text>{{item.nickName}}</text>
+        <!--用户名 -->
+      </view>
+      <!-- 文本内容-->
+      <text class='content'>{{item.content}}</text>
+      <!--图片内容 -->
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' class='image' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.labels}}{{item.date}}</text>
+        <!--评论 -->
+        <view>
+          <image src='/images/mysent/wx_app_comment.jpg' class='comment-image' catchtap='onTapToCommentLost' data-post-id="{{item._id}}"></image>
+          <text class='comment-count'>{{item.commentSize}}</text>
+        </view>
+      </view>
+      <!-- 分割线-->
+      <view class='divLine' id="3"></view>
+    </view>
+  </block>
+</view>
+</view>

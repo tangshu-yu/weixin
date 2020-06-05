@@ -1,0 +1,30 @@
+<!--start.wxml-->
+<view class="container">
+  <view class="remind-box" wx:if="{{remind}}">
+    <image class="remind-img" src="/images/LogIn/loading.gif"></image>
+  </view>
+  <block wx:else>
+    <image class="title" src="/images/LogIn/title8.png"></image>
+    <view class="content">
+      <view class="hd" style="transform:rotateZ({{angle}}deg);">
+        <!-- <image class="logo" src="{{userInfo.avatarUrl}}"></image> -->
+        <!-- <view class="header"> -->
+          <open-data class="logo" type="userAvatarUrl"></open-data>
+        <!-- </view> -->
+
+        <image class="wave" src="/images/LogIn/wave.png" mode="aspectFill"></image>
+        <image class="wave wave-bg" src="/images/LogIn/wave.png" mode="aspectFill"></image>
+      </view>
+      <view class="bd">
+        <button wx:if='{{hiddenButton==false}}' class='confirm-btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+          <text> 开启小程序之旅</text>
+        </button>
+        <!-- <image class="smalltitle" src="/images/LogIn/confirm-word1.png"></image> -->
+        <view wx:if="{{hiddenButton==true}}" class="confirm-btn" bindtap='goToIndex'>
+          <text>欢迎来到三峡学院点击开始</text>
+        </view>
+        <!-- <text class="copyright">@qindiandadudu 贡献本页代码</text> -->
+      </view>
+    </view>
+  </block>
+</view>

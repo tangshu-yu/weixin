@@ -1,0 +1,133 @@
+<!-- 首页的轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 搜索框 -->
+
+<!-- 分类 -->
+<view class='fenlei'>
+ <view class='navi navi-jianzhi' >
+    <view class='leibie fenlei-zahuopu'>
+      <image src='../../images/goods/baihuo.png' catchtap="Supermarket"></image>
+      <view>校园百货</view>
+    </view>
+    </view>
+  <view class='navi navi-jianzhi' >
+     <view class='leibie fenlei-jianzhi'>
+      <image src='../../images/goods/jianzhi.png' catchtap="ParttimeJob"></image>
+      <view>学生兼职</view>
+    </view>
+  </view>
+  <navigator url='../Post/Post' class='navi navi-jishou'>
+    <view class='leibie fenlei-jishou'>
+      <image src='../../images/goods/fabu.png'></image>
+      <view>发布</view>
+    </view>
+  </navigator>
+  <navigator url='../Search/Search?title=goodsIssue' class='navi navi-jishou'>
+    <view class='leibie fenlei-jishou'>
+      <image src='../../images/LostPage/sousuo.png'></image>
+      <view>搜索</view>
+    </view>
+  </navigator>
+</view>
+
+
+<!-- 全部信息 -->
+<view class='page' wx:if="{{flags=='all'}}">
+  <block wx:for="{{queryResult}}" wx:key="item" wx:for-index="index">
+    <view class='body'>
+      <view class='author'>
+        <!--头像 -->
+        <image src="{{item.avatarUrl}}" class='head'></image>
+        <!--用户名 -->
+
+        <text>{{item.nickName}}</text>
+      </view>
+      <!-- 文本内容-->
+      <!-- <view class="textContent"> -->
+      <text class='content'>{{item.content}}</text>
+      <!-- </view> -->
+
+
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' mode='aspectFill' class='image' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.date}}</text>
+
+        <image src='/images/wx_app_comment.jpg' class='comment-image' catchtap='onTapToComment' data-post-id="{{item._id}}"></image>
+        <text class='comment-count'>{{item.commentSize}}</text>
+
+      </view>
+    </view>
+
+
+    <!-- 分割线-->
+    <view class='divLine'></view>
+  </block>
+</view>
+
+<!-- 校园百货 -->
+
+<view class='page' wx:if="{{flags=='market'}}">
+  <block wx:for="{{queryResult}}" wx:key="item" wx:for-index="index">
+    <view class='body' wx:if="{{item.index=='0'}}" >
+      <view class='author'>
+        <image src="{{item.avatarUrl}}" class='head'></image>
+        <text>{{item.nickName}}</text>
+      </view>
+      <text class='content'>{{item.content}}</text>
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' mode='aspectFill' class='image' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.date}}</text>
+        <image src='/images/wx_app_comment.jpg' class='comment-image' catchtap='onTapToComment' data-post-id="{{item._id}}"></image>
+        <text class='comment-count'>{{item.commentSize}}</text>
+      </view>
+          <!-- 分割线-->
+    <view class='divLine'></view>
+    </view>
+  </block>
+</view>
+
+
+
+<!-- 学生兼职 -->
+<view class='page' wx:if="{{flags=='job'}}">
+  <block wx:for="{{queryResult}}" wx:key="item" wx:for-index="index">
+    <view class='body' wx:if="{{item.index=='1'}}" >
+      <view class='author'>
+        <!--头像 -->
+        <image src="{{item.avatarUrl}}" class='head'></image>
+        <text>{{item.nickName}}</text>
+      </view>
+      <text class='content'>{{item.content}}</text>
+      <view class='content-img' wx:if="{{item.fileID.length!=0}}">
+        <image src='{{item.fileID}}' mode='aspectFill' class='image' bindtap='previewImg' data-index="{{index}}"></image>
+      </view>
+
+      <view class='date-comment'>
+        <!-- 日期-->
+        <text class='date-content'>{{item.date}}</text>
+
+        <image src='/images/wx_app_comment.jpg' class='comment-image' catchtap='onTapToComment' data-post-id="{{item._id}}"></image>
+        <text class='comment-count'>{{item.commentSize}}</text>
+
+      </view>
+         <!-- 分割线-->
+    <view class='divLine'></view>
+    </view>
+
+
+ 
+  </block>
+</view>
